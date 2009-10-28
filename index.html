@@ -93,11 +93,11 @@
 
 		<h2>h1n1</h2>
 		<p>H1N1 is a small, bare-bones Scheme interpreter that I wrote to help me learn about interpreters and compilers. It's written in pure Java and relies on no external dependencies. Here's a more formal description of the project:</p>
-		<h3>Description</h3>
+		<h3>description</h3>
 		<p>H1N1 a small Scheme interpreter, intended for students or programmers. It should fully support anonymous functions, basic control structures, and simple I/O operations. There should also be a small standard library of math functions and utility features.</p>
 		<p>The interpreter should sacrifice speed and efficiency of execution for clarity and simplicity of implementation.</p>
 		<p>There are numerous Scheme interpreters currently available, such as <span class="caps">PLT</span> Scheme, GNU Guile, and Gambit. This project does not aim to compete with these existing interpreters; it does not even attempt to fully implement the R5RS or R6RS standard. Rather, it aims to serve as a simple, clear sample implementation suitable for pedagogical purposes. It should be easily extendable by any interested party.</p>
-		<h3>Detailed Objectives</h3>
+		<h3>detailed objectives</h3>
 		<ul>
 			<li>Basic operations &#8211; should support all basic arithmetic operations (+ , -, *, /, %). Should restrict types to floating-point for simplicity. Should also support boolean logic (and, or, etc.) and basic string manipulation (concatenation).</li>
 			<li>Anonymous functions &#8211; should support first-class anonymous functions with the lambda keyword.</li>
@@ -106,20 +106,20 @@
 			<li>Basic I/O &#8211; basic I/O procedures (print, write) should be supported for easy user interaction</li>
 			<li>Standard library &#8211; the standard library should support standard functional programming idioms (map, fold, filter, etc.), and should provide math procedures (sin, cos, tan, log, etc.).</li>
 		</ul>
-		<h3>Limitations</h3>
+		<h3>limitations</h3>
 		<ul>
 			<li>For simplicity, this interpreter will perform no pre-execution passes on the syntax tree. Therefore, no optimization can be done, and no error warnings can be raised until the tree is actually evaluated.</li>
 			<li>Improper lists will not be implemented.</li>
 			<li>There will be no support for macros.</li>
 		</ul>	
-		<h3>Design outline</h3>
+		<h3>design outline</h3>
 		<ul>
 			<li>A tokenizer class is responsible for tokenizing an input string according to Scheme syntax rules.</li>
 			<li>A parser class reads a stream of tokens and constructs a syntax tree. The syntax tree is a hierarchy of expression classes, which all derive from the abstract Expr class. All Expr classes come with toString() methods for easy printing, equals() methods, and may or may not provide hashCode() methods.</li>
 			<li>A VM (virtual machine) class is responsible for evaluating an expression, and keeps track of local variables in a stack. Built-in functionality is separated into the static Builtin class, which operates on a given virtual machine (this is done to separate the functionality of built-in procedures from the logic of the virtual machine).</li>
 			<li>A main class is responsible for reading input from the user, passing it from the tokenizer to the parser and to the virtual machine, and printing the value to output for the user to see.</li>
 		</ul>
-		<h3>Current status</h3>
+		<h3>current status</h3>
 		<ul>
 			<li>The current H1N1 implements the if control structure, list manipulation methods, arithmetic and boolean operators, multiple levels of equality testing (reference-level and value-level), anonymous functions, partial function application, and syntactic sugar for list quoting.</li>
 			<li>User interaction is performed through a read-eval-print loop (a <span class="caps">REPL</span>). The interpreter can also execute code from an input file.</li>
@@ -136,6 +136,11 @@
 		<p>In this video, I chained several hundred consecutive scenes rendered by the raytracer using ffmpeg:</p><p><embed id=VideoPlayback src=http://video.google.com/googleplayer.swf?docid=4856507466970608458&hl=en&fs=true style=width:400px;height:326px allowFullScreen=true allowScriptAccess=always type=application/x-shockwave-flash></embed></p>
 
 		<h2>physics simulations</h2>
+		<p>One of my favorite classes in high school was my physics class. I was fascinated by several of my teacher's demonstrations, so I decided to write some simulations with <a href="http://processing.org/">Processing</a>.</p>
+		<h3>magnets in a current loop</h3>
+		<p>In this simulation, a loop of wire is wound around a circular surface. Current is run through the wire, and magnets are placed inside the surface. Clicking the mouse inside the circle places a magnet at that position, and pressing the spacebar "shakes" the system by applying a random force on each magnet. It's pretty interesting to see the magnets fall into their minimal energy configuration over time.</p>
+		<h3>gravity</h3>
+		<p>Here's a planetary body simulator. A pre-defined number of planets (two here) float around under the standard gravitational force law, and the user controls the placement of a third planet with the mouse. It's ridiculously hard to get a stable orbit.</p>
 
 		<h2>mandelbrot set renderer</h2>
 

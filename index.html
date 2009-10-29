@@ -14,7 +14,7 @@
 		font-family:Georgia, Serif;
 	}
 	#wrap {
-		width:750px;
+		width:770px;
 		margin:0 auto;
 		background:#bbbdc4;
 	}
@@ -25,23 +25,9 @@
 	h1 {
 	    margin:0;
     }
-	/*#nav {
-		padding:5px 10px;
-		background:#c99;
-	}
-	#nav ul {
-		margin:0;
-		padding:0;
-		list-style:none;
-	}
-	#nav li {
-		display:inline;
-		margin:0;
-		padding:0;
-	}*/
 	#main {
 		float:left;
-		width:480px;
+		width:500px;
 		padding:10px;
 		background:#fffaf2;
 	}
@@ -75,24 +61,17 @@
 <body>
 <div id="wrap">
 	<div id="header"><h1>jonathan's github page</h1></div>
-	<!-- <div id="nav">
-		<ul>
-			<li><a href="#">Option 1</a></li>
-			<li><a href="#">Option 2</a></li>
-			<li><a href="#">Option 3</a></li>
 
-			<li><a href="#">Option 4</a></li>
-			<li><a href="#">Option 5</a></li>
-		</ul>
-	</div> -->
 	<div id="main">
 		<h2>about me</h2>
-		<p>I'm Jonathan Ho. I'm a high school student in California. I've been tinkering with computer programming since early in elementary school, and over the years I've created countless small projects and toys.</p>
+		<p>I'm Jonathan Ho. I'm a student of Troy High School in California. I've been tinkering with computer programming since early in elementary school, and over the years I've created countless small projects and toys.</p>
 		<p>I could have never learned programming had it not been for open-source software&mdash;I've learned countless coding techniques from reading source code, and I rely almost entirely on an open-source programming environment. So in the giving spirit of open source, I've decided to post some of my most interesting projects here on GitHub. Everything's under the MIT/X11 license, so there's nothing to worry about if you decide to use my horrible code for any reason.</p>
 		<p>So, below are short descriptions of my projects. To the right is a navigation bar that you can use to jump to individual project descriptions.</p>
+		<hr />
 
 		<h2><a name="h1n1">h1n1</a></h2>
-		<p>H1N1 is a small, bare-bones Scheme interpreter that I wrote to help me learn about interpreters and compilers. It's written in pure Java and relies on no external dependencies. Here's a more formal description of the project:</p>
+		<p>H1N1 is a small, bare-bones Scheme interpreter that I wrote to help me learn about interpreters and compilers. It's written in pure Java and relies on no external dependencies. I submitted H1N1 for a computer science class project, so I wrote a formal description of the project. Here it is:</p>
+		<blockquote>
 		<h3>description</h3>
 		<p>H1N1 a small Scheme interpreter, intended for students or programmers. It should fully support anonymous functions, basic control structures, and simple I/O operations. There should also be a small standard library of math functions and utility features.</p>
 		<p>The interpreter should sacrifice speed and efficiency of execution for clarity and simplicity of implementation.</p>
@@ -125,24 +104,29 @@
 			<li>User interaction is performed through a read-eval-print loop (a <span class="caps">REPL</span>). The interpreter can also execute code from an input file.</li>
 			<li>Many control structures are still lacking, and I/O operations and a standard library are yet to be implemented.</li>
 		</ul>
+		</blockquote>
+		<hr />
 
 		<h2><a name="asdftris">asdftris</a></h2>
 		<p>All programmers need to write a Tetris clone as a rite of passage, and asdftris is mine. It's written in Python, and uses the excellent <a href="http://www.pygame.org/">PyGame</a> SDL bindings for graphics and input.</p>
 		<p>Here's a quick screenshot:<img src="asdftris.png" alt="asdftris screenshot" /></p>
+		<hr />
 
 		<h2><a name="raytracer">raytracer</a></h2>
 		<p>When I discovered the <a href="http://www.povray.org/">POV-Ray</a> raytracer a few years ago, I was absolutely amazed by the quality and flexibility that raytracing provides. So, I decided to write my own raytracer. It's aptly named <em>raytracer</em>, and it's written in C++. (It comes with a simple BMP file writer which may be of interest.)</p>
 		<p>Unfortunately, the raytracer in its current state can only render spheres, and scenes can't be read from a file and must be hard-coded in the main procedure.</p>
 		<p>In this video, I chained several hundred consecutive scenes rendered by the raytracer using ffmpeg:</p><p><embed id=VideoPlayback src=http://video.google.com/googleplayer.swf?docid=4856507466970608458&hl=en&fs=true style=width:400px;height:326px allowFullScreen=true allowScriptAccess=always type=application/x-shockwave-flash></embed></p>
+		<hr />
 
 		<h2><a name="physics">physics simulations</a></h2>
-		<p>One of my favorite classes in high school was my physics class. I was fascinated by several of my teacher's demonstrations, so I decided to write some simulations with <a href="http://processing.org/">Processing</a>.</p>
+		<p>One of my favorite classes in high school was my physics class. I was fascinated by several of my teacher's demonstrations, so I decided to write some simulations with <a href="http://processing.org/">Processing</a>. Both simulations here use the <a href="http://en.wikipedia.org/wiki/Verlet_integration">Verlet integration method</a>.</p>
 		<h3>magnets in a current loop</h3>
 		<p>In this simulation, a loop of wire is wound around a circular surface. Current is run through the wire, and magnets are placed inside the surface. Clicking the mouse inside the circle places a magnet at that position, and pressing the spacebar disturb the system by applying a random force on each magnet. It's pretty interesting to see the magnets fall into their minimal energy configuration over time.</p>
 		<p>Here's a <a href="http://openprocessing.org/visuals/?visualID=5533">link</a> to the OpenProcessing page, which displays the applet version and the source code.</p>
 		<h3>gravity</h3>
 		<p>Here's a planetary body simulator. A pre-defined number of planets (two here) float around under the standard gravitational force law, and the user controls the placement of a third planet with the mouse. It's ridiculously hard to get a stable orbit.</p>
 		<p>Here's a <a href="http://openprocessing.org/visuals/?visualID=5534">link</a> to the OpenProcessing page.</p>
+		<hr />
 
 		<h2><a name="mandelbrot">mandelbrot set renderer</a></h2>
 	</div>

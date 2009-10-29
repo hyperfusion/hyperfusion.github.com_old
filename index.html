@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>jonathan's github page</title>
+	<title>jonathan's page</title>
 	<style type="text/css">
 	body, html {
 		font-size: small;
@@ -31,12 +31,8 @@
 		padding:10px;
 		background:#fffaf2;
 	}
-	h2 {
-		margin:0 0 1em;
-	}
-	h3 {
-		font-size:smaller;
-	}
+	h2 { margin:0 0 1em; }
+	h3 { font-size:small; }
 	#sidebar {
 		float:right;
 		width:230px;
@@ -49,25 +45,21 @@
 		background:#fff5e5;
 		font-size:smaller;
 	}
-	#footer p {
-		margin:0;
-    }
-	* html #footer {
-		height:1px;
-	}
+	#footer p { margin:0; }
+	* html #footer { height:1px; }
 	</style>
 </head>
 
 <body>
 <div id="wrap">
-	<div id="header"><h1>jonathan's github page</h1></div>
+	<div id="header"><h1>jonathan's page</h1></div>
 
 	<div id="main">
 		<h2>about me</h2>
 		<p>My name's Jonathan Ho, and I'm a student of Troy High School in California. I've been tinkering with computer programming since early in elementary school, and over the years I've created countless small projects and toys.</p>
 		<p>I could have never learned programming had it not been for open-source software&mdash;I've learned countless coding techniques from reading source code, and I rely almost entirely on an open-source programming environment. So in the giving spirit of open source, I've decided to post some of my most interesting projects here on GitHub. Everything's under the MIT/X11 license, so there's not much to worry about if you decide to use my horrible code for any reason.</p>
 		<p>Below are short descriptions of my most interesting projects. To the right is a navigation bar that you can use to jump to individual sections.</p>
-		<hr />
+		<hr>
 
 		<h2><a name="h1n1">h1n1</a></h2>
 		<p>H1N1 is a small, bare-bones Scheme interpreter that I wrote to help me learn about interpreters and compilers. It's written in pure Java and relies on no external dependencies. I submitted H1N1 for a computer science class project, so I wrote a formal description of H1N1. Here it is:</p>
@@ -105,18 +97,18 @@
 			<li>Many control structures are still lacking, and I/O operations and a standard library are yet to be implemented.</li>
 		</ul>
 		</blockquote>
-		<hr />
+		<hr>
 
 		<h2><a name="asdftris">asdftris</a></h2>
 		<p>All programmers need to write a Tetris clone as a rite of passage, and asdftris is mine. It's written in Python, and uses the excellent <a href="http://www.pygame.org/">PyGame</a> SDL bindings for graphics and input.</p>
 		<p>Here's a quick screenshot:<img src="asdftris.png" alt="asdftris screenshot" /></p>
-		<hr />
+		<hr>
 
 		<h2><a name="raytracer">raytracer</a></h2>
 		<p>When I discovered the <a href="http://www.povray.org/">POV-Ray</a> raytracer a few years ago, I was absolutely amazed by the quality and flexibility that raytracing provides. So, I decided to write my own raytracer. It's aptly named <em>raytracer</em>, and it's written in C++. (It comes with a simple BMP file writer which may be of interest.)</p>
 		<p>Unfortunately, the raytracer in its current state can only render spheres, and scenes can't be read from a file and must be hard-coded in the main procedure.</p>
-		<p>In this video, I chained several hundred consecutive scenes rendered by the raytracer using ffmpeg:</p><p><embed id=VideoPlayback src=http://video.google.com/googleplayer.swf?docid=4856507466970608458&hl=en&fs=true style=width:400px;height:326px allowFullScreen=true allowScriptAccess=always type=application/x-shockwave-flash></embed></p>
-		<hr />
+		<p>In this video, I chained several hundred consecutive scenes rendered by the raytracer using ffmpeg:</p><p><embed id=VideoPlayback src=http://video.google.com/googleplayer.swf?docid=4856507466970608458&hl=en&fs=true style=width:400px;height:326px allowFullScreen=true allowScriptAccess=always type=application/x-shockwave-flash></p>
+		<hr>
 
 		<h2><a name="physics">physics simulations</a></h2>
 		<p>One of my favorite classes in high school was my physics class. I was fascinated by several of my teacher's demonstrations, so I decided to write some simulations with <a href="http://processing.org/">Processing</a>. Both simulations here use the <a href="http://en.wikipedia.org/wiki/Verlet_integration">Verlet integration method</a>.</p>
@@ -126,7 +118,7 @@
 		<h3>gravity</h3>
 		<p>Here's a planetary body simulator. A pre-defined number of planets (two here) float around under the standard gravitational force law, and the user controls the placement of a third planet with the mouse. It's ridiculously hard to get a stable orbit.</p>
 		<p>Here's a <a href="http://openprocessing.org/visuals/?visualID=5534">link</a> to the OpenProcessing page.</p>
-		<hr />
+		<hr>
 
 		<h2><a name="mandelbrot">mandelbrot set renderer</a></h2>
 	</div>
@@ -134,7 +126,7 @@
 	<div id="sidebar">
 		<h2>projects</h2>
 		<ul>
-			<li><a href="#h1n1">h1n1</a></a></li>
+			<li><a href="#h1n1">h1n1</a></li>
 			<li><a href="#asdftris">asdftris</a></li>
 			<li><a href="#raytracer">raytracer</a></li>
 			<li><a href="#physics">physics simulations</a></li>

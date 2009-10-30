@@ -56,8 +56,8 @@
 
 	<div id="main">
 		<h2>about me</h2>
-		<p>My name's Jonathan Ho, and I'm a student of Troy High School in California. I've been tinkering with computer programming since early in elementary school, and over the years I've created countless small projects and toys.</p>
-		<p>I could have never learned programming had it not been for open-source software&mdash;I've learned countless coding techniques from reading source code, and I rely almost entirely on an open-source programming environment. So in the giving spirit of open source, I've decided to post some of my most interesting projects here on GitHub. Everything's under the MIT/X11 license, so there's not much to worry about if you decide to use my horrible code for any reason.</p>
+		<p>My name is Jonathan Ho, and I'm a student of Troy High School in California. I've been tinkering with computer programming since early in elementary school, and over the years I've created countless small projects and toys.</p>
+		<p>I could have never learned programming had it not been for open-source software&mdash;I've learned countless coding techniques from reading source code, and I rely almost entirely on an open-source programming environment. So in the giving spirit of open source, I've decided to post some of my most interesting projects here. Everything's under the MIT/X11 license, so there's not much to worry about if you decide to use my horrible code for any reason.</p>
 		<p>Each section below describes one of my projects and contains a link to source code. To the right is a navigation bar that you can use to jump to individual sections.</p>
 		<hr>
 
@@ -70,14 +70,15 @@
 &gt; (define map (lambda (f l) (foldr (lambda (x y) (cons (f x) y)) '() l)))<br>
 &gt; <br>
 &gt; ; Now let's try them out<br>
-&gt; (map (lambda (x) (+ x 1)) '(1 2 3 4 5))<br>
+&gt; (define incr (+ 1)) ; partial function application<br>
+&gt; (map incr '(1 2 3 4 5))<br>
 (2.0 3.0 4.0 5.0 6.0)<br>
 &gt; (define sum (lambda (l) (foldr (lambda (x y) (+ x y)) 0 l)))<br>
 &gt; (sum '(1 2 3 4 5))<br>
 15.0<br>
 &gt; <br>
 &gt; ; Let's try playing with the Fibonacci sequence<br>
-&gt; (define fib (lambda (x) (if (= x 1) 1 (if (= x 2) 2 (+ (fib (- x 1)) (fib (- x 2)))))))<br>
+&gt; (define fib (lambda (x) (if (= x 0) 1 (if (= x 1) 1 (+ (fib (- x 1)) (fib (- x 2)))))))<br>
 &gt; (map fib '(0 1 2 3 4 5 6 7 8 9 10))<br>
 (1.0 1.0 2.0 3.0 5.0 8.0 13.0 21.0 34.0 55.0 89.0)<br>
 &gt; <br>
@@ -138,7 +139,7 @@
 		<h3>magnets in a current loop</h3>
 		<p>In this simulation, a loop of wire is wound around a circular surface. Current is run through the wire, and magnets are placed inside the surface. Clicking the mouse inside the circle places a magnet at that position, and pressing the spacebar disturb the system by applying a random force on each magnet. It's pretty interesting to see the magnets fall into their minimal energy configuration over time.</p>
 		<p>For example, this system of 16 particles...</p><img src="ringmagnets-start.png" alt="ringmagnets start" height="361px" width="350px" />
-		<p>... stabilizes to this:</p><img src="ringmagnets-end.png" alt="ringmagnets end" height="361px" width="350px" />
+		<p>...stabilizes to this:</p><img src="ringmagnets-end.png" alt="ringmagnets end" height="361px" width="350px" />
 		<p>Here's a <a href="http://openprocessing.org/visuals/?visualID=5533">link</a> to the OpenProcessing page, which displays a live applet version and the source code.</p>
 		<h3>gravity</h3>
 		<p>This one simulates a system of bodies affected by gravity (like a group of planets). A pre-defined number of bodies (two here) float around under the standard gravitational force law, and the user controls the placement of a third planet with the mouse. It's ridiculously hard to get a stable orbit.</p>

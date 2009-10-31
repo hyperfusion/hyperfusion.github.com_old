@@ -56,7 +56,7 @@
 		<h2>about me</h2>
 		<p>My name is Jonathan Ho, and I'm a student of Troy High School in California. I've been tinkering with computer programming since early in elementary school, and over the years I've created countless small projects and toys.</p>
 		<p>I could have never learned programming had it not been for open-source software&mdash;I've learned countless coding techniques from reading source code, and I rely almost entirely on an open-source programming environment. So in the giving spirit of open source, I've decided to post some of my most interesting projects here. Everything's under the MIT/X11 license, so there's not much to worry about if you decide to use my horrible code for any reason.</p>
-		<p>Each section below describes one of my projects and contains a link to source code. To the right is a navigation bar that you can use to jump to individual sections.</p>
+		<p>Each section below describes one of my projects and contains a link to its source code. To the right is a navigation bar that you can use to jump to individual sections.</p>
 		<hr>
 
 		<h2><a name="h1n1">h1n1</a></h2>
@@ -84,9 +84,9 @@
 		<p>I submitted H1N1 for a computer science class project, so I did write a formal description. Here it is:</p>
 		<blockquote>
 		<h3>description</h3>
-		<p>H1N1 a small Scheme interpreter, intended for students or programmers. It should fully support anonymous functions, basic control structures, and simple I/O operations. There should also be a small standard library of math functions and utility features.</p>
+		<p>H1N1 a small Scheme interpreter intended for students or programmers. It should fully support anonymous functions, basic control structures, and simple I/O operations. There should also be a small standard library of math functions and utility features.</p>
 		<p>The interpreter should sacrifice speed and efficiency of execution for clarity and simplicity of implementation.</p>
-		<p>There are numerous Scheme interpreters currently available, such as <span class="caps">PLT</span> Scheme, GNU Guile, and Gambit. This project does not aim to compete with these existing interpreters; it does not even attempt to fully implement the R5RS or R6RS standard. Rather, it aims to serve as a simple, clear sample implementation suitable for pedagogical purposes. It should be easily extendable by any interested party.</p>
+		<p>There are numerous Scheme interpreters currently available, such as <span class="caps">PLT</span> Scheme, GNU Guile, and Gambit. This project does not aim to compete with these existing interpreters; it does not attempt to implement the R5RS or R6RS standards. Rather, it aims to serve as a simple, clear sample implementation suitable for pedagogical purposes. It should be easily extendable by any interested party.</p>
 		<h3>detailed objectives</h3>
 		<ul>
 			<li>Basic operations &#8211; should support all basic arithmetic operations (+ , -, *, /, %). Should restrict types to floating-point for simplicity. Should also support boolean logic (and, or, etc.) and basic string manipulation (concatenation).</li>
@@ -99,6 +99,7 @@
 		<h3>limitations</h3>
 		<ul>
 			<li>For simplicity, this interpreter will perform no pre-execution passes on the syntax tree. Therefore, no optimization can be done, and no error warnings can be raised until the tree is actually evaluated.</li>
+			<li>Again, no optimization will be implemented, so tail call elimination will not be supported.</li>
 			<li>Improper lists will not be implemented.</li>
 			<li>There will be no support for macros.</li>
 		</ul>	
@@ -137,7 +138,7 @@
 		<hr>
 
 		<h2><a name="raytracer">raytracer</a></h2>
-		<p>When I discovered the <a href="http://www.povray.org/">POV-Ray</a> raytracer a few years ago, I was absolutely amazed by the quality and flexibility that raytracing provides. So, I decided to write my own raytracer. It's aptly named <em>raytracer</em>, and it's written in C++. (It comes with a simple BMP file writer which may be of interest.)</p>
+		<p>When I discovered the <a href="http://www.povray.org/">POV-Ray</a> raytracer a few years ago, I was absolutely amazed by the quality and flexibility that raytracing provides. So, I decided to write my own raytracer. It's aptly named <em>raytracer</em>, and it's written in C++. (It comes with a simple BMP file writer that may be of interest.)</p>
 		<p>Unfortunately, the raytracer in its current state can only render spheres, and scenes can't be read from a file and must be hard-coded in the main procedure.</p>
 		<p>In this video, I chained several hundred consecutive scenes rendered by the raytracer using ffmpeg:</p><p><embed id=VideoPlayback src=http://video.google.com/googleplayer.swf?docid=4856507466970608458&hl=en&fs=true style=width:400px;height:326px allowFullScreen=true allowScriptAccess=always type=application/x-shockwave-flash></p>
 		<p>The source code is available <a href="http://github.com/hyperfusion/raytracer">here</a>.</p>
@@ -146,12 +147,12 @@
 		<h2><a name="physics">physics simulations</a></h2>
 		<p>One of my favorite classes in high school was my physics class. I was fascinated by several of my teacher's demonstrations, so I decided to write some simulations with <a href="http://processing.org/">Processing</a>. Both simulations here use the <a href="http://en.wikipedia.org/wiki/Verlet_integration">Verlet integration method</a>.</p>
 		<h3>magnets in a current loop</h3>
-		<p>In this simulation, a loop of wire is wound around a circular surface. Current is run through the wire, and magnets are placed inside the surface. Clicking the mouse inside the circle places a magnet at that position, and pressing the spacebar disturb the system by applying a random force on each magnet. It's pretty interesting to see the magnets fall into their minimal energy configuration over time.</p>
+		<p>In this simulation, a loop of wire is wound around a circular surface. Current is run through the wire, and magnets are placed inside the surface. Clicking the mouse inside the circle places a magnet at that position, and pressing the spacebar disturbs the system by applying a random force on each magnet. It's pretty interesting to see the magnets fall into their minimal energy configuration over time.</p>
 		<p>For example, this system of 16 particles...</p><img src="ringmagnets-start.png" alt="ringmagnets start" height="361px" width="350px" />
 		<p>...stabilizes to this:</p><img src="ringmagnets-end.png" alt="ringmagnets end" height="361px" width="350px" />
 		<p>Here's a <a href="http://openprocessing.org/visuals/?visualID=5533">link</a> to the OpenProcessing page, which displays a live applet version and the source code.</p>
 		<h3>gravity</h3>
-		<p>This one simulates a system of bodies affected by gravity (like a group of planets). A pre-defined number of bodies (two here) float around under the standard gravitational force law, and the user controls the placement of a third planet with the mouse. It's ridiculously hard to get a stable orbit.</p>
+		<p>In this simulation, several bodies (two here) float around under the standard gravitational force law. The user controls the placement of a third "shadow" planet with the mouse. It's ridiculously hard to get a stable orbit.</p>
 		<img src="gravity.png" alt="gravity" height="361px" width="350px" />
 		<p>Here's a <a href="http://openprocessing.org/visuals/?visualID=5534">link</a> to the OpenProcessing page.</p>
 		<hr>
@@ -165,7 +166,7 @@
         <h2><a name="envelope">envelope curve</a></h2>
         <p>When I was a little kid, I did a project where I tied strings to pegs in a certain arrangement such that the strings produced a curve. The result looked something like this:</p>
         <img src="envelope.png" alt="envelope" />
-        <p>So few years ago, when word of the new HTML canvas element began to spread, I decided to make a little JavaScript application that draws these sort of curves to any arbitrary resolution. Here's the <a href="curve-envelope.html">link</a> (you can view the source directly using your browser). Unfortunately, the canvas element isn't supported in Internet Explorer, so you'll have to use something like Firefox or Chrome.</p>
+        <p>So few years ago, when word of the new HTML canvas element began to spread, I decided to make a little JavaScript application that draws these sorts of curves to any arbitrary resolution. Here's the <a href="curve-envelope.html">link</a> (you can view the source directly using your browser). Unfortunately, the canvas element isn't supported in Internet Explorer, so you'll have to use something like Firefox or Chrome.</p>
 	</div>
 
 	<div id="sidebar">

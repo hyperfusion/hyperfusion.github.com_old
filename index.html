@@ -22,15 +22,13 @@
     	padding:5px 10px;
 		background:#a3a6b1;
 	}
-	h1 {
-	    margin:0;
-    }
 	#main {
 		float:left;
 		width:500px;
 		padding:10px;
 		background:#fffaf2;
 	}
+	h1 { margin:0; }
 	h2 { margin:0 0 1em; }
 	h3 { font-size:small; }
 	#sidebar {
@@ -123,8 +121,19 @@
 
 		<h2><a name="asdftris">asdftris</a></h2>
 		<p>All programmers need to write a Tetris clone as a rite of passage, and asdftris is mine. It's written in Python, and uses the excellent <a href="http://www.pygame.org/">PyGame</a> SDL bindings for graphics and input.</p>
-        <p>Here's a quick screenshot:</p><p><img src="asdftris.png" alt="asdftris screenshot" /></p>
+        <p>Here's a quick screenshot (I'm not a great Tetris player):</p><p><img src="asdftris.png" alt="asdftris screenshot" /></p>
         <p>The source code is available <a href="http://github.com/hyperfusion/asdftris">here</a>.</p>
+		<hr>
+
+		<h2><a name="ascii85">ascii85</a></h2>
+		<p>Base64 is for wimps. Ascii85, which Adobe uses this in PostScript, uses a larger set of output characters than base64, so the encoded size is smaller. Plus, ascii85 output looks cooler.</p>
+		<p>This passage, for example:</p>
+		<code>We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.</code>
+		<p>encodes into:</p>
+		<pre>&lt;~=(NLfDerr,FD,6,AKZ)8F`_;&lt;+EVNE@V$['ASbs1AThcuASuT@+EV:*F&lt;G&quot;.C`<br>mS+DBNA.AKYK'ART[lA0&gt;H'F^]);+EV:*F&lt;G[=AU,D,Eb-A)DId[0ARlomGp%3BA<br>SH0-6ZQaHFDl1BGA2/4+Ceu'FCAm$+E_R1Ch[Hu@:F%a+AuodBQS;H+EV:*F&lt;G&quot;/<br>Df021FD,6,AKYE%AKXZ\An&lt;M99PIsIEccRL@;]TuFD,5.E-62BF_Pq?De:+_@;p1<br>&quot;DImm1/d_~&gt;</pre>
+		<p>I told you it was cool. My implementation here is written in pure C. It works in both directions, and you can even pipe things around with it like any good UNIX utility.</p>
+		<p>(It's not my fault if you use this and lose data because this thing translates incorrectly. I'm pretty sure the implementation is correct, though.)</p>
+		<p>The source code is available <a href="http://github.com/hyperfusion/ascii85">here</a>.</p>
 		<hr>
 
 		<h2><a name="raytracer">raytracer</a></h2>
@@ -158,6 +167,7 @@
 		<ul>
 			<li><a href="#h1n1">h1n1</a></li>
 			<li><a href="#asdftris">asdftris</a></li>
+			<li><a href="#ascii85">ascii85</a></li>
 			<li><a href="#raytracer">raytracer</a></li>
 			<li><a href="#physics">physics simulations</a></li>
 			<li><a href="#mandelbrot">mandelbrot set renderer</a></li>

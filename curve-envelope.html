@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>curve envelope</title>
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="scriptaculous.js"></script>
+<script type="text/javascript">
+drawLine = function(canvas, ax, ay, bx, by) {
+    canvas.moveTo(ax, ay);
+    canvas.lineTo(bx, by);
+}
+drawCE = function(canvas, s1x, s1y, e1x, e1y, s2x, s2y, e2x, e2y, n) {
+    canvas.beginPath();
+    drawLine(canvas, s1x, s1y, e1x, e1y);
+    drawLine(canvas, s2x, s2y, e2x, e2y);
+    for (var i = 0; i < n; ++i) {
+        var ux1 = i/n*(e1x - s1x) + s1x;
+        var uy1 = i/n*(e1y - s1y) + s1y;
+        var ux2 = i/n*(e2x - s2x) + s2x;
+        var uy2 = i/n*(e2y - s2y) + s2y;
+        drawLine(canvas, ux1, uy1, ux2, uy2);
+    }
+    canvas.stroke();
+}
+function curve_envelope(interval) {
+    var canvas = document.getElementById('canvas').getContext('2d');
+    canvas.clearRect(0, 0, 500, 500);
+    drawCE(canvas, 0, 500, 500, 500, 0, 0, 0, 500, interval);
+}
+window.onload = function() {
+    curve_envelope(2);
+    var slider = $('slider');
+    new Control.Slider(slider.down('.handle'), slider, {
+        axis: 'horizontal',
+        range: $R(2, 200),
+        onSlide: function(v) { curve_envelope(Math.round(v)); },
+        onChange: function(v) { curve_envelope(Math.round(v)); }
+    });
+}
+</script>
+<style type="text/css">
+    div.slider { width:500px; height:10px; background-color:gray; position:relative; }
+    div.slider div.handle { width:10px; height:15px; background-color:black; position:absolute; }
+</style>
+</head>
+
+<body>
+<p>Drag the slider!</p>
+<div id="slider" class="slider"><div class="handle"></div></div>
+<br />
+<canvas id="canvas" width="500" height="500"></canvas>
+<p>(note: this only works in canvas-compatible browsers. not internet explorer.)</p>
+</body>
+</html>
